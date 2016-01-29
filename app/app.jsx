@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDom from "react-dom";
-import { Window, Content, PaneGroup ,Pane } from "react-photonkit";
-
-import Header from "./header.jsx"
-import Footer from "./footer.jsx";
-import Sidebar from "./sidebar.jsx"
+var React = require('react');
+var ReactDom = require('react-dom');
+var { Window, Content, PaneGroup ,Pane } = require('react-photonkit');
+var Header = require('./components/Header.jsx');
+var Footer = require('./components/Footer.jsx');
+var Sidebar = require('./components/Sidebar.jsx');
+var Container = require('./components/Container.jsx');
 
 require('../index.scss');
 
@@ -15,7 +15,7 @@ ReactDom.render(
       <PaneGroup>
         <Sidebar />
         <Pane className="padded-more">
-          Hello, react-photonkit!!!
+          <Container />
         </Pane>
       </PaneGroup>
     </Content>

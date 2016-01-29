@@ -30,7 +30,9 @@ const server = net.createServer(function (c) {
     delete process.env.DEV;
   }
 
+  // Set up development.
   process.env.DEV = 1
+
   var cmd = win32 ? 'electron.cmd' : 'electron';
   child = spawn(cmd, getElectronArgs());
   child.stdout.on('data', function (data) {
@@ -65,4 +67,5 @@ server.listen(config.port, function (e) {
 });
 
 server.on('error', function (e) {
+	//
 });

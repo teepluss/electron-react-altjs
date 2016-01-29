@@ -1,5 +1,8 @@
 # epp
 
+URL: http://react-photonkit.github.io/#/
+URL: https://github.com/react-photonkit/epp
+
 <img src='assets/epp.png' width=256 />
 
 Electron aPPlication
