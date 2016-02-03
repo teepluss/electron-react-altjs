@@ -1,7 +1,5 @@
-var SidebarActions = require('../actions/SidebarActions');
+import SidebarActions from '../actions/SidebarActions'
 
-module.exports = {
-	changeContent: function(index, props) {
-		SidebarActions.changeContent(index, props);
-	}
+export function changeContent(index, props) {
+	SidebarActions.changeContent(index, props)
 }

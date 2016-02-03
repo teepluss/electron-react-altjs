@@ -1,16 +1,16 @@
-var React = require('react');
-var navigation = require('../utilities/navigation');
+import React from 'react'
+import { changeContent } from '../utilities/navigation'
 
-var Download = React.createClass({
-	render: function() {
+class Download extends React.Component {
+	render() {
 		return (
 			<ul>
 				<li>Download Page {this.props.name}</li>
-				<li><a href="javascript:void(0)" onClick={() => navigation.changeContent('download', {name: 'Love Flux'})}>Download with props</a></li>
-				<li><a href="javascript:void(0)" onClick={() => navigation.changeContent('home')}>Back To Home</a></li>
+				<li><a href="javascript:void(0)" onClick={() => changeContent('download', {name: 'Love Flux'})}>Download with props</a></li>
+				<li><a href="javascript:void(0)" onClick={() => changeContent('home')}>Back To Home</a></li>
 			</ul>
 		)
 	}
-});
+}
 
-module.exports = Download;
+export default  Download

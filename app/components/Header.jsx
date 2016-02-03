@@ -1,21 +1,20 @@
-var React = require('react');
-var { Toolbar, Actionbar, Button, ButtonGroup } = require('react-photonkit');
+import React from 'react'
+import { Toolbar, Actionbar, Button, ButtonGroup } from 'react-photonkit'
+import { changeContent } from '../utilities/navigation'
 
-var navigation = require('../utilities/navigation');
-
-var Header = React.createClass({
-  render: function() {
+class Header extends React.Component {
+  render() {
     return (
       <Toolbar title="epp">
         <Actionbar>
           <ButtonGroup>
-            <Button glyph="home" onClick={() => navigation.changeContent('home', {})} />
-            <Button glyph="github" />
+            <Button glyph="home" onClick={() => changeContent('home', {})} />
+            <Button glyph="github" onClick={() => changeContent('download', {})} />
           </ButtonGroup>
         </Actionbar>
       </Toolbar>
-    );
+    )
   }
-});
+}
 
-module.exports = Header;
+export default Header

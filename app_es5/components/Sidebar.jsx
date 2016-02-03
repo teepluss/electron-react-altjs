@@ -1,13 +1,13 @@
-import React from 'react'
-import { Pane, NavGroup, NavTitle, NavGroupItem } from 'react-photonkit'
-import { changeContent } from '../utilities/navigation'
+var React = require('react');
+var { Pane, NavGroup, NavTitle, NavGroupItem } = require('react-photonkit');
+var navigation = require('../utilities/navigation');
 
-class Sidebar extends React.Component {
-	onSelect(data) {
-		changeContent(data.index, data.props)
-	}
+var Sidebar = React.createClass({
+	onSelect: function(data) {
+		navigation.changeContent(data.index, data.props);
+	},
 
-	render() {
+	render: function() {
 		return (
 			<Pane ptSize="sm" sidebar>
 				<NavGroup activeKey={1} onSelect={this.onSelect}>
@@ -18,7 +18,7 @@ class Sidebar extends React.Component {
 			</Pane>
 		);
 	}
-}
+});
 
 
-export default Sidebar
+module.exports = Sidebar;

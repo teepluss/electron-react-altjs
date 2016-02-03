@@ -30,6 +30,8 @@
     "electron-app"
   ],
   "dependencies": {
+    "alt": "^0.18.2",
+    "alt-utils": "^1.0.0",
     "electron-debug": "^0.2.1",
     "history": "^1.12.3",
     "object-assign": "^4.0.1",

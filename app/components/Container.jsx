@@ -1,27 +1,40 @@
-var React = require('react');
-var SidebarStore = require('../stores/SidebarStore');
+import connectToStores from 'alt-utils/lib/connectToStores'
+import React from 'react'
+import SidebarStore from '../stores/SidebarStore'
 
-var Container = React.createClass({
+class Container extends React.Component {
 
-	getInitialState() {
-		return SidebarStore.getState();
-	},
+	static getStores() {
+		return [SidebarStore]
+	}
+
+  static getPropsFromStores() {
+    return SidebarStore.getState()
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = SidebarStore.getState()
+
+    // Bind state.
+    this.onStateChange = this.onStateChange.bind(this)
+  }
 
 	componentDidMount() {
-  	SidebarStore.listen(this.onStateChange);
-	},
+    SidebarStore.listen(this.onStateChange)
+	}
 
 	componentWillUnmount() {
-  		SidebarStore.unlisten(this.onStateChange);
-	},
+    SidebarStore.unlisten(this.onStateChange)
+	}
 
-	onStateChange: function(state) {
-		this.setState(state);
-	},
+	onStateChange(state) {
+		this.setState(state)
+	}
 
-	render: function() {
-		var Content = this.state.content;
-		var contentProps = this.state.contentProps;
+	render() {
+		let Content = this.state.content;
+		let contentProps = this.state.contentProps;
 
 		return (
 			<div>
@@ -29,6 +42,6 @@ var Container = React.createClass({
 			</div>
 		)
 	}
-});
+}
 
-module.exports = Container;
+export default connectToStores(Container)

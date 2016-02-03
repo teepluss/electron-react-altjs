@@ -1,4 +1,4 @@
-import alt from '../alt'
+var alt = require('../alt');
 
 class SidebarActions {
 	changeContent(index, props) {
@@ -6,4 +6,4 @@ class SidebarActions {
 	}
 }
 
-export default alt.createActions(SidebarActions)
+module.exports = alt.createActions(SidebarActions);

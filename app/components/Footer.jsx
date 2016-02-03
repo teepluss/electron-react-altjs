@@ -1,12 +1,12 @@
-var React = require('react');
-var { Toolbar } = require('react-photonkit');
+import React from 'react'
+import { Toolbar } from 'react-photonkit'
 
-var Footer = React.createClass({
-  render: function() {
+class Footer extends React.Component {
+  render() {
     return (
       <Toolbar ptType="footer" />
-    );
+    )
   }
-})
+}
 
-module.exports = Footer;
+export default Footer
